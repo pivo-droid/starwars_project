@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ name }} - Star Wars</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #ffd700;
+            text-align: center;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+        .info {
+            background-color: #2a2a2a;
+            border: 2px solid #ffd700;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #444;
+        }
+        .info-row:last-child {
+            border-bottom: none;
+        }
+        .label {
+            color: #ffd700;
+            font-weight: bold;
+        }
+        .list {
+            background-color: #2a2a2a;
+            border: 2px solid #ffd700;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .list h2 {
+            color: #ffd700;
+            margin-top: 0;
+        }
+        .list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #444;
+        }
+        .list li:last-child {
+            border-bottom: none;
+        }
+        .back-button {
+            display: inline-block;
+            background-color: #ffd700;
+            color: #000;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .back-button:hover {
+            background-color: #ffed4e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-button">← Back to Characters</a>
+        
+        <h1>{{ name }}</h1>
+        
+        <div class="info">
+            <div class="info-row">
+                <span class="label">Height:</span>
+                <span>{{ height }} cm</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Mass:</span>
+                <span>{{ mass }} kg</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Hair Color:</span>
+                <span>{{ hair_color }}</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Skin Color:</span>
+                <span>{{ skin_color }}</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Eye Color:</span>
+                <span>{{ eye_color }}</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Birth Year:</span>
+                <span>{{ birth_year }}</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Gender:</span>
+                <span>{{ gender }}</span>
+            </div>
+        </div>
+
+        {% if films %}
+        <div class="list">
+            <h2>Films</h2>
+            <ul>
+                {% for film in films %}
+                <li>{{ film }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% if vehicles %}
+        <div class="list">
+            <h2>Vehicles</h2>
+            <ul>
+                {% for vehicle in vehicles %}
+                <li>{{ vehicle }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% if starships %}
+        <div class="list">
+            <h2>Starships</h2>
+            <ul>
+                {% for starship in starships %}
+                <li>{{ starship }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
