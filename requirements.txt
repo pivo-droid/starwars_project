@@ -1,2 +1,4 @@
-django==6.0.1
-requests==2.31.0
+## Требования
+- Python 3.10+
+- Django 6.0+
+- requests 2.31.0
